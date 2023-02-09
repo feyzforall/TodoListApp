@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ListView: View {
         
-    @State var items : [String] = [
-        "This is the first item",
-        "This is the second",
-        "and third"
+    @State var items : [ItemModel] = [
+       ItemModel(title: "This is the first title", isCompleted: false),
+       ItemModel(title: "This is the second", isCompleted: true),
+       ItemModel(title: "Third", isCompleted: false),
     ]
     
     var body: some View {
         VStack{
             List{
-                ForEach(items, id: \.self) {item in
-                    ListRowView(title: item)
+                ForEach(items) {item in
+                    ListRowView(item: item)
                 }
                 .listStyle(PlainListStyle())
                 
@@ -33,6 +33,7 @@ struct ListView: View {
                 destination: AddView())
         )
     }
+       
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -40,6 +41,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView{
             ListView()
         }
+        
     }
 }
 
