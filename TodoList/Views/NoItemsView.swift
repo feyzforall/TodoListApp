@@ -10,6 +10,7 @@ import SwiftUI
 struct NoItemsView: View {
     
     @State var animate: Bool = false
+    let secondaryAccentColor = Color("SecondaryAccentColor")
     
     var body: some View {
         ScrollView{
@@ -17,7 +18,9 @@ struct NoItemsView: View {
                 Text("There are no items")
                     .font(.title)
                     .fontWeight(.semibold)
-                Text("Are you a productive person? I think you should click the add button and a bunch of items to your todo list")
+                Text("Are you a productive person? I think you should click the add button and a bunch of items to your todo list"
+                )
+                .padding(.bottom, 30)
                    
                 NavigationLink(
                     destination: AddView(),
@@ -27,21 +30,38 @@ struct NoItemsView: View {
                             .font(.headline)
                             .frame(height:55)
                             .frame(maxWidth: .infinity)
-                            .background(.blue)
+                            .background(animate ? secondaryAccentColor : Color.accentColor)
                             .cornerRadius(10)
                     }
                 )
+                .onAppear(perform: addAnimation)
+                .padding(.horizontal, animate ? 30 : 50)
+                .shadow(
+                    color: animate ? Color.red.opacity(0.7) : Color.accentColor.opacity(0.7),
+                    radius: animate ? 25 : 15,
+                    x: 0,
+                    y: animate ? 50 : 30
+                )
+                .scaleEffect(animate ? 1.1 : 1.0)
+                .offset(y: animate ? -7 : 0)
             }
             .multilineTextAlignment(.center)
             .padding(40)
-            .onAppear(perform: addAnimation)
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     func addAnimation(){
+        guard !animate else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-            
+            withAnimation(
+                Animation
+                    .easeInOut(duration: 2.0)
+                    .repeatForever()
+            ){
+                animate.toggle()
+            }
         })
     }
 }

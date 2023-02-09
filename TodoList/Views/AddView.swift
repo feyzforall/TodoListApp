@@ -35,7 +35,7 @@ struct AddView: View {
                         .frame(height:55)
                         .frame(maxWidth:.infinity)
                         .foregroundColor(.white)
-                        .background(.mint)
+                        .background(Color.accentColor)
                         .cornerRadius(10)
                 })
             }
