@@ -24,9 +24,8 @@ struct AddView: View {
                 )
                 .padding(.horizontal)
                 .frame(height:55)
-                .background(.bar)
+                .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(10)
-                .foregroundColor(.mint)
                 
                 Button(action: {
                     saveButtonPressed()
@@ -39,6 +38,7 @@ struct AddView: View {
                         .cornerRadius(10)
                 })
             }
+            
         }
         .padding()
         .navigationTitle("Add Item")
@@ -69,10 +69,20 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-            AddView()
+        Group{
+            NavigationView{
+                AddView()
+            }
+            .preferredColorScheme(.dark)
+            .environmentObject(ListViewModel())
+            .previewInterfaceOrientation(.portraitUpsideDown)
+            NavigationView{
+                AddView()
+            }
+            .preferredColorScheme(.light)
+            .environmentObject(ListViewModel())
         }
-        .environmentObject(ListViewModel())
+        
     }
 }
 
