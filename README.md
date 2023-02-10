@@ -3,7 +3,7 @@
 This is a TodoList App I made to learn to SwiftUI.
 MVVM architecture was chosen as the architecture and UserDefault was used for local storage.
 
-<img src= "https://user-images.githubusercontent.com/30154300/217848712-4510cb8e-fb5b-4601-983e-ec4dbc52defb.png" width="100" height="100"
-<img src = "https://user-images.githubusercontent.com/30154300/217848723-fdddf41c-a05b-4098-a149-2495717146c7.png" width="200" height="400"
-(https://user-images.githubusercontent.com/30154300/217848726-4ff97e37-b1c9-49db-ad4e-ddd726fbd5a0.png width="200" height="400")
-![Simulator Screen Shot - iPhone 11 Pro - 2023-02-09 at 17 58 45](https://user-images.githubusercontent.com/30154300/217848727-6c76c87d-8b3c-43ad-9100-f3719ae4c93b.png width="200" height="400")
+![Simulator Screen Shot - iPhone 11 Pro - 2023-02-09 at 17 56 55](https://user-images.githubusercontent.com/30154300/218016561-9971a632-1622-4b26-963a-a4d42094222d.png)
+![Simulator Screen Shot - iPhone 11 Pro - 2023-02-09 at 17 57 44](https://user-images.githubusercontent.com/30154300/218016566-f653ce73-6d1d-44f1-a392-a1492a8506b6.png)
+![Simulator Screen Shot - iPhone 11 Pro - 2023-02-09 at 17 58 03](https://user-images.githubusercontent.com/30154300/218016571-9213c917-1b30-41ea-9da3-dbe374beec86.png)
+![Simulator Screen Shot - iPhone 11 Pro - 2023-02-09 at 17 58 45](https://user-images.githubusercontent.com/30154300/218016573-d739b25d-4f2f-4170-b326-1a4f5019bbfa.png)
